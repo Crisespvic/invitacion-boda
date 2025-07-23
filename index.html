@@ -45,11 +45,16 @@
 
 
 
-<body>
+<body class="body-modal-abierto">
   <audio id="musica-fondo" loop>
     <source src="music/Somos la copa y el vino - Chayanne - Bailando Bachata (Letra) - Cherry Lu Latin.mp3"
       type="audio/mpeg">
   </audio>
+<dialog id="musica-dialog">
+  <p>Se acerca nuestro gran día y deseamos <br>compartirlo con todos nuestros seres queridos.</p>
+  <button id="aceptar-musica">Aceptar</button>
+</dialog>
+
   <button class="icon-btn" onclick="document.getElementById('musica-fondo').play()" aria-label="Reproducir música">
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
       <circle cx="16" cy="16" r="16" fill="#e0c3a3" />
@@ -87,6 +92,9 @@
       <div>
         <p>Faltan</p>
         <span id="dias">0</span><span class="label"> días</span>
+        <span id="horas">00</span><span class="label"> horas</span>
+        <span id="minutos">00</span><span class="label"> minutos</span>
+        <span id="segundos">00</span><span class="label"> segundos</span>
       </div>
       <div>
         <p>La comida empieza a las</p>
@@ -120,42 +128,58 @@
   <script src="script.js"></script>
 
   <script>
-    function actualizarContadorDias() {
-      const fechaBoda = new Date('2025-09-27');
-      const hoy = new Date();
-      // Elimina la hora para comparar solo fechas
-      fechaBoda.setHours(0, 0, 0, 0);
-      hoy.setHours(0, 0, 0, 0);
-      const diffTime = fechaBoda - hoy;
-      const diffDias = Math.max(0, Math.ceil(diffTime / (1000 * 60 * 60 * 24)));
-      document.getElementById('dias').textContent = diffDias;
-    }
-    actualizarContadorDias();
-  </script>
-  
-  <script>
-    let musicaReproducida = false;
+    function actualizarContador() {
+      const fechaBoda = new Date('2025-09-27T13:00:00'); // Cambia la hora si lo deseas
+      const ahora = new Date();
+      const diff = fechaBoda - ahora;
 
-        function forzarPlayMusica() {
-          const audio = document.getElementById('musica-fondo');
-          if (!musicaReproducida) {
-            audio.play().then(() => {
-              musicaReproducida = true;
-              window.removeEventListener('click', forzarPlayMusica);
-              window.removeEventListener('scroll', forzarPlayMusica);
-            window.removeEventListener('touchstart', forzarPlayMusica);
-            window.removeEventListener('touchmove', forzarPlayMusica);
-          }).catch(() => {
-            // Si falla, no quitamos los listeners para intentar de nuevo
-          });
-        }
+      if (diff <= 0) {
+        document.getElementById('dias').textContent = 0;
+        document.getElementById('horas').textContent = '00';
+        document.getElementById('minutos').textContent = '00';
+        document.getElementById('segundos').textContent = '00';
+        return;
       }
 
-        window.addEventListener('click', forzarPlayMusica);
-        window.addEventListener('scroll', forzarPlayMusica);
-        window.addEventListener('touchstart', forzarPlayMusica);
-        window.addEventListener('touchmove', forzarPlayMusica);
-      </script>
+      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diff / (1000 * 60)) % 60);
+      const segundos = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('dias').textContent = dias;
+      document.getElementById('horas').textContent = horas.toString().padStart(2, '0');
+      document.getElementById('minutos').textContent = minutos.toString().padStart(2, '0');
+      document.getElementById('segundos').textContent = segundos.toString().padStart(2, '0');
+    }
+
+    actualizarContador();
+    setInterval(actualizarContador, 1000);
+  </script>
+
+<script>
+  // Abre el diálo cargar la página y bloquea el scroll
+  window.addEventListener('DOMContentLoaded', function () {
+    document.body.classList.add('body-modal-abierto');
+    document.getElementById('musica-dialog').showModal();
+  });
+
+  let musicaReproducida = false;
+
+  function forzarPlayMusica() {
+    const audio = document.getElementById('musica-fondo');
+    if (!musicaReproducida && audio) {
+      audio.play().then(() => {
+        musicaReproducida = true;
+      }).catch(() => { });
+    }
+  }
+
+  document.getElementById('aceptar-musica').addEventListener('click', function () {
+    document.getElementById('musica-dialog').close();
+    document.body.classList.remove('body-modal-abierto');
+    forzarPlayMusica();
+  });
+</script>
 </body>
 
 </html>

@@ -130,9 +130,18 @@ header span {
 
 .countdown span#dias {
   color: #ff0000;
-  font-size: 2.5em;
+  font-size: 2em;
   text-shadow: 2px 2px 6px #000000bb;
   text-transform: uppercase;
+}
+
+.countdown span#horas,
+.countdown span#minutos,
+.countdown span#segundos {
+  color: #ff0000;
+    font-size: 1.4em;
+    text-shadow: 2px 2px 6px #000000bb;
+    text-transform: uppercase;
 }
 
 .countdown .time {
@@ -207,7 +216,7 @@ button {
 }
 
 button:hover {
-  background-color: #e0a800;
+  background-color: #f4b918;
 }
 
 .icon-btn {
@@ -261,6 +270,45 @@ button:hover {
   filter: drop-shadow(0 2px 6px #ffffff);
 }
 
+.body-modal-abierto {
+  overflow: hidden !important;
+  height: 100vh;
+  position: fixed;
+  width: 100vw;
+}
+
+/* style.css */
+#musica-dialog {
+  border: #000000 dotted 4px;
+  border-radius: 20px;
+  padding: 2em 1.5em;
+  background: #fff0f6;
+  text-align: center;
+  max-width: 90vw;
+  font-family: 'Rye', serif;
+}
+
+#musica-dialog p {
+  font-size: 1.2em;
+  color: #a91919;
+  margin-bottom: 1.5em;
+}
+
+#aceptar-musica {
+  background: #000000;
+  color: #fff;
+  border: #000000 solid 1px;
+  border-radius: 30px;
+  padding: 0.7em 2em;
+  font-size: 1.1em;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #e255a344;
+}
+
+#aceptar-musica:hover {
+  background: #f4b918;
+  color: #000;
+}
 @keyframes floatHeart {
   0% {
     transform: translateY(100vh) scale(1);
