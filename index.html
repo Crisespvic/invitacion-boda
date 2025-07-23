@@ -142,7 +142,7 @@
         musicaReproducida = true;
         window.removeEventListener('click', forzarPlayMusica);
         window.removeEventListener('scroll', forzarPlayMusica);
-        window.removeEventListener('touchstart', forzarPlayMusica);
+        window.removeEventListener('touchmove', forzarPlayMusica);
       }).catch(() => {
         // Si falla, no quitamos los listeners para intentar de nuevo
       });
@@ -151,7 +151,7 @@
 
   window.addEventListener('click', forzarPlayMusica);
   window.addEventListener('scroll', forzarPlayMusica);
-  window.addEventListener('touchstart', forzarPlayMusica);
+  window.addEventListener('touchmove', for      lay    sica);
 </script>
 </body>
 
