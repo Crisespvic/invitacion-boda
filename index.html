@@ -15,15 +15,7 @@
 
 <!-- Scripts -->
 <script>
-  window.addEventListener('load', function () {
-    const audio = document.getElementById('musica-fondo');
-    // Intenta reproducir el audio automáticamente
-    audio.play().catch(function (e) {
-      // Si el navegador bloquea la reproducción automática, no hacer nada
-    });
-    // Actualiza el contador de días cuando la página esté cargada
     actualizarContadorDias();
-  });
   function actualizarContadorDias() {
     const fechaBoda = new Date('2025-09-27');
     const hoy = new Date();
@@ -61,6 +53,23 @@
 
   // Genera corazones cada 600ms
   setInterval(createHeart, 600);
+</script>
+
+<script>
+  // Función para reproducir el audio
+  function forzarPlayMusica() {
+    const audio = document.getElementById('musica-fondo');
+    if (audio.paused) {
+      audio.play().catch(() => { });
+    }
+    // Elimina los listeners después del primer intento
+    window.removeEventListener('click', forzarPlayMusica);
+    window.removeEventListener('scroll', forzarPlayMusica);
+  }
+
+  // Añade los listeners al cargar la página
+  window.addEventListener('click', forzarPlayMusica);
+  window.addEventListener('scroll', forzarPlayMusica);
 </script>
 
 <body>
