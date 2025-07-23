@@ -9,8 +9,34 @@ body {
 
 .container {
   max-width: 1200px;
-  margin: auto;
-  padding: 2rem;
+    margin: 0 auto;
+      padding: 1em;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    @media (max-width: 600px) {
+      .container {
+        max-width: 100%;
+        padding: 0.5em;
+      }
+    
+      .imagen-pareja {
+        width: 100% !important;
+        max-width: 340px;
+      }
+    
+      .imagen-cristian,
+      .imagen-sonia {
+        width: 90px;
+      }
+    
+      .venue,
+      .maps,
+      .countdown {
+        padding: 1em;
+        border-radius: 15px;
+      }
 }
 
 header h1 {
@@ -58,11 +84,15 @@ header span {
 .imagen-sonia {
   width: 202px;
   height: auto;
+  display: block;
+    border-radius: 10px;
 }
 
 .imagen-pareja {
   width: 540px;
   height: auto;
+  display: block;
+    border-radius: 10px;
 }
 
 .subtitle {
@@ -124,6 +154,7 @@ header span {
 
 .venue img {
   max-width: 100%;
+  height: auto;
   border-radius: 10px;
   margin-bottom: 1em;
 }
@@ -246,11 +277,16 @@ button:hover {
   }
 }
 
-.container,
+
 .venue,
 .maps,
 .countdown {
   animation: fadeIn 1.5s ease;
+  border-radius: 40px;
+    box-shadow: 0 4px 24px #e255a322;
+    background: #fff9fa2d;
+    padding: 2em;
+    margin-bottom: 2em;
 }
 
 @keyframes fadeIn {
@@ -262,5 +298,190 @@ button:hover {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    max-width: 100vw;
+    padding: 0.2em;
+  }
+
+  header h1 {
+    font-size: 2.2em;
+  }
+
+  .subtitle {
+    font-size: 2em;
+  }
+
+  .date,
+  .location {
+    font-size: 1.3em;
+  }
+
+  .imagenes {
+    flex-direction: row;
+    gap: 0.7em;
+  }
+
+  .imagen-pareja {
+    width: 95vw !important;
+    max-width: 200px;
+  }
+
+  .imagen-cristian,
+  .imagen-sonia {
+    width: 74px;
+  }
+
+  .venue,
+  .maps,
+  .countdown {
+    padding: 0.7em;
+    border-radius: 10px;
+  }
+
+  .venue-title {
+    font-size: 1.2em;
+  }
+
+  .heart {
+    width: 32px;
+    height: 32px;
+  }
+
+  .icon-btn {
+    font-size: 1em;
+    padding: 0.3em 0.7em;
+  }
+
+  .maps iframe {
+    width: 100% !important;
+    height: 180px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    max-width: 100vw;
+    padding: 0.2em;
+  }
+
+  header h1 {
+    font-size: 2.7em;
+  }
+
+  .subtitle {
+    font-size: 3em;
+  }
+
+  .date,
+  .location {
+    font-size: 2em;
+  }
+
+  .imagenes {
+    flex-direction: row;
+    gap: 0.7em;
+  }
+
+  .imagen-pareja {
+    width: 95vw !important;
+    max-width: 200px;
+  }
+
+  .imagen-cristian,
+  .imagen-sonia {
+    width: 74px;
+  }
+
+  .venue,
+  .maps,
+  .countdown {
+    padding: 0.7em;
+    border-radius: 10px;
+  }
+
+  .venue-title {
+    font-size: 1.2em;
+  }
+
+  .heart {
+    width: 32px;
+    height: 32px;
+  }
+
+  .icon-btn {
+    font-size: 1em;
+    padding: 0.3em 0.7em;
+  }
+
+  .maps iframe {
+    width: 100% !important;
+    height: 180px !important;
+  }
+}
+
+@media (min-width: 320px) {
+  .container {
+    max-width: 100vw;
+    padding: 0.2em;
+  }
+
+  header h1 {
+    font-size: 1.6em;
+  }
+
+  .subtitle {
+    font-size: 2em;
+  }
+
+  .date,
+  .location {
+    font-size: 1.5em;
+  }
+
+  .imagenes {
+    flex-direction: row;
+    gap: 0.7em;
+  }
+
+  .imagen-pareja {
+    width: 95vw !important;
+    max-width: 150px;
+  }
+
+  .imagen-cristian,
+  .imagen-sonia {
+    width: 54px;
+  }
+
+  .venue,
+  .maps,
+  .countdown {
+    padding: 0.7em;
+    border-radius: 10px;
+    font-size: 0.8em;
+  }
+
+
+
+  .venue-title {
+    font-size: 1em;
+  }
+
+  .heart {
+    width: 10px;
+    height: 10px;
+  }
+
+  .icon-btn {
+    font-size: 1em;
+    padding: 0.3em 0.7em;
+  }
+
+  .maps iframe {
+    width: 100% !important;
+    height: 180px !important;
   }
 }
