@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Invitación de Boda - Sonia & Cristian</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Fonts: Rye -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+  window.addEventListener('load', function () {
+    const audio = document.getElementById('musica-fondo');
+    // Intenta reproducir el audio automáticamente
+    audio.play().catch(function (e) {
+      // Si el navegador bloquea la reproducción automática, no hacer nada
+    });
+    // Actualiza el contador de días cuando la página esté cargada
+    actualizarContadorDias();
+  });
+  function actualizarContadorDias() {
+    const fechaBoda = new Date('2025-09-27');
+    const hoy = new Date();
+    // Elimina la hora para comparar solo fechas
+    fechaBoda.setHours(0, 0, 0, 0);
+    hoy.setHours(0, 0, 0, 0);
+    const diffTime = fechaBoda - hoy;
+    const diffDias = Math.max(0, Math.ceil(diffTime / (1000 * 60 * 60 * 24)));
+    document.getElementById('dias').textContent = diffDias;
+  }
+</script>
+
+<script>
+  function createHeart() {
+    const container = document.querySelector('.hearts-container');
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.style.left = Math.random() * 95 + 'vw';
+    heart.style.animationDuration = (4 + Math.random() * 3) + 's';
+    const colores = ['#ff69b4', '#ff0000'];
+    const color = colores[Math.floor(Math.random() * colores.length)];
+    heart.innerHTML = `
+    <svg viewBox="0 0 32 29.6" width="32" height="32">
+      <path d="M23.6,0c-2.7,0-5.1,1.3-6.6,3.3C15.5,1.3,13.1,0,10.4,0C4.7,0,0,4.7,0,10.4
+        c0,11.1,16,19.2,16,19.2s16-8.1,16-19.2C32,4.7,27.3,0,23.6,0z"
+        fill="${color}"/>
+    </svg>
+  `;
+    container.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }
+
+  // Genera corazones cada 600ms
+  setInterval(createHeart, 600);
+</script>
+
+<body>
+  <div class="hearts-container"></div>
+  <div class="container">
+    <header>
+      <h1>CRISTIAN<span>&</span>MAIRELY</h1>
+      <div class="imagenes">
+        <img src="img/Imagen2.jpg" alt="Cristian" class="imagen-cristian">
+        <img src="img/Imagen1.jpg" alt="losdos" class="imagen-pareja">
+        <img src="img/Imagen3.jpg" alt="Mairely" class="imagen-sonia">
+      </div>
+      <p class="subtitle">¡NOS CASAMOS!</p>
+      <p class="date">27-09-2025</p>
+      <p class="location">OLIVA, VALENCIA</p>
+    </header>
+
+    <audio id="musica-fondo" loop>
+      <source src="music/Somos la copa y el vino - Chayanne - Bailando Bachata (Letra) - Cherry Lu Latin.mp3"
+        type="audio/mpeg">
+    </audio>
+    <button class="icon-btn" onclick="document.getElementById('musica-fondo').play()" aria-label="Reproducir música">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="16" fill="#e0c3a3" />
+        <polygon points="12,9 26,16 12,23" fill="#7c5e3c" />
+      </svg>
+      Reproducir
+    </button>
+    <button class="icon-btn" onclick="document.getElementById('musica-fondo').pause()" aria-label="Pausar música">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="16" fill="#e0c3a3" />
+        <rect x="11" y="10" width="3" height="12" fill="#7c5e3c" />
+        <rect x="18" y="10" width="3" height="12" fill="#7c5e3c" />
+      </svg>
+      Pausar
+    </button>
+
+    <section class="fila-imagenes">
+
+    </section>
+
+    <section class="countdown">
+      <div>
+        <p>Faltan</p>
+        <span id="dias">0</span><span class="label"> días</span>
+      </div>
+      <div>
+        <p>La comida empieza a las</p>
+        <span class="time">13:00</span><span class="label">pm</span>
+      </div>
+    </section>
+
+    <section class="venue">
+      <p>El evento tendrá lugar en</p>
+      <a href="https://www.facebook.com/p/Bar-Restaurante-EL-Pelut-100063479021210/" target="_blank">
+        <img src="img/bar.png" alt="Lugar de la celebración">
+      </a>
+      <div class="venue-info">
+        <h2 class="venue-title">RESTAURANT EL PELUT</h2>
+        <p> Carrer de la Sagrada Família, 9<br>46780 Oliva, Valencia</p>
+      </div>
+    </section>
+
+    <section class="maps">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1305.1565338125001!2d-0.12728402142912698!3d38.91933736999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61e66c0231050f%3A0x2c117f8b6b89374d!2sCarrer%20de%20la%20Sagrada%20Fam%C3%ADlia%2C%209%2C%2046780%20Oliva%2C%20Val%C3%A8ncia!5e0!3m2!1sen!2ses!4v1753262869046!5m2!1sen!2ses"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

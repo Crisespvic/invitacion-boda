@@ -1,0 +1,266 @@
+body {
+  background: #66c2ff url('https://www.transparenttextures.com/patterns/dark-leather.png');
+  color: #000000;
+  font-family: "Rye", serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+header h1 {
+  font-size: 6em;
+  font-weight: normal;
+  text-shadow: 2px 2px 6px #ffffff;
+  text-transform: uppercase;
+}
+
+
+header span {
+  font-size: 0.5em;
+  display: inline-block;
+  margin: 0 0.5em;
+  color: #000000;
+}
+
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  /* opcional para que no se rompa en pantallas pequeñas */
+}
+
+.header-content {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.imagenes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6.5rem;
+  /* espacio entre imágenes */
+  flex-wrap: wrap;
+  /* permite que bajen en pantallas pequeñas */
+  margin: 1.5rem 0;
+}
+
+.imagen-cristian,
+.imagen-sonia {
+  width: 202px;
+  height: auto;
+}
+
+.imagen-pareja {
+  width: 540px;
+  height: auto;
+}
+
+.subtitle {
+  font-style: italic;
+  font-size: 6em;
+  margin-top: 0.8em;
+  color: #f4b918;
+  text-shadow: 2px 2px 6px #000000;
+  text-transform: uppercase;
+}
+
+.date {
+  font-size: 4em;
+  margin: 0.5em 0;
+  text-shadow: 2px 2px 6px #ffffff;
+  text-transform: uppercase;
+}
+
+.location {
+  font-size: 3.5em;
+  font-style: italic;
+  margin-bottom: 2em;
+  text-shadow: 2px 2px 6px #ffffff;
+  text-transform: uppercase;
+}
+
+.countdown {
+  display: flex;
+  justify-content: space-around;
+  margin: 2em 0;
+  font-size: 1.5em;
+  text-shadow: 2px 2px 6px #ffffff;
+  text-transform: uppercase;
+}
+
+.countdown span#dias {
+  color: #ff0000;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 6px #000000bb;
+  text-transform: uppercase;
+}
+
+.countdown .time {
+  color: #ff0000;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 6px #000000bb;
+  text-transform: uppercase;
+}
+
+.venue {
+  margin: 3em 0;
+}
+
+.venue p {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  text-shadow: 2px 2px 6px #ffffff;
+}
+
+.venue img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1em;
+}
+
+.venue-info h2 {
+  margin: 0;
+  font-size: 2em;
+  font-family: serif;
+}
+
+.venue-info p {
+  font-size: 1.2em;
+  margin: 0.5em 0;
+  text-shadow: 2px 2px 6px #ffffff;
+  text-transform: uppercase;
+}
+
+.venue-info a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.venue-title {
+  font-family: "Rye", serif;
+  font-size: 2.2em;
+  font-weight: bold;
+  color: #000000;
+  letter-spacing: 2px;
+  margin: 0.5em 0 0.2em 0;
+  text-shadow: 2px 2px 6px #ffffff;
+  text-transform: uppercase;
+}
+
+.rye-regular {
+  font-family: "Rye", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+button {
+  font-size: 1.2em;
+  padding: 0.5em 1em;
+  margin: 0.5em;
+  border: none;
+  border-radius: 8px;
+  background-color: #f4b918;
+  color: #000;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e0a800;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  background: #000;
+  border: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  transition: transform 0.2s;
+  font-size: 1.2em;
+  color: #fff;
+}
+
+.icon-btn:hover {
+  background: #ff0000;
+  color: #fff;
+}
+
+.icon-btn:active {
+  transform: scale(0.95);
+}
+
+.icon-btn svg {
+  fill: #fff;
+}
+
+.icon-btn svg polygon,
+.icon-btn svg rect {
+  fill: #000000;
+}
+
+.hearts-container {
+  pointer-events: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  opacity: 0.8;
+  animation: floatHeart 6s linear forwards;
+  filter: drop-shadow(0 2px 6px #ffffff);
+}
+
+@keyframes floatHeart {
+  0% {
+    transform: translateY(100vh) scale(1);
+    opacity: 0.8;
+  }
+
+  80% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(-10vh) scale(1.3);
+    opacity: 0;
+  }
+}
+
+.container,
+.venue,
+.maps,
+.countdown {
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
