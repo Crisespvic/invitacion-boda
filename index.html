@@ -50,10 +50,10 @@
     <source src="music/Somos la copa y el vino - Chayanne - Bailando Bachata (Letra) - Cherry Lu Latin.mp3"
       type="audio/mpeg">
   </audio>
-<dialog id="musica-dialog">
-  <p>Se acerca nuestro gran día y deseamos <br>compartirlo con todos nuestros seres queridos.</p>
-  <button id="aceptar-musica">Aceptar</button>
-</dialog>
+  <dialog id="musica-dialog">
+    <p>Se acerca nuestro gran día y deseamos <br>compartirlo con todos nuestros seres queridos.</p>
+    <button id="aceptar-musica">Aceptar</button>
+  </dialog>
 
   <button class="icon-btn" onclick="document.getElementById('musica-fondo').play()" aria-label="Reproducir música">
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -89,17 +89,14 @@
     </section>
 
     <section class="countdown">
-      <div>
+      <div class="countdown-info">
         <p>Faltan</p>
-        <span id="dias">0</span><span class="label"> días</span>
-        <span id="horas">00</span><span class="label"> horas</span>
-        <span id="minutos">00</span><span class="label"> minutos</span>
+        <span id="dias">0</span><span class="label"> días</span><br>
+        <span id="horas">00</span><span class="label"> horas</span><br>
+        <span id="minutos">00</span><span class="label"> minutos</span><br>
         <span id="segundos">00</span><span class="label"> segundos</span>
       </div>
-      <div>
-        <p>La comida empieza a las</p>
-        <span class="time">13:00</span><span class="label">pm</span>
-      </div>
+
     </section>
 
     <section class="venue">
@@ -108,8 +105,15 @@
         <img src="img/bar.png" alt="Lugar de la celebración">
       </a>
       <div class="venue-info">
-        <h2 class="venue-title">RESTAURANT EL PELUT</h2>
+        <h2 class="venue-title">RESTAURANT <br>EL PELUT</h2>
         <p> Carrer de la Sagrada Família, 9<br>46780 Oliva, Valencia</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="lunch-hour">
+        <p>La comida empieza a las</p>
+        <span class="time">13:00</span><span class="label">pm</span>
       </div>
     </section>
 
@@ -156,30 +160,30 @@
     setInterval(actualizarContador, 1000);
   </script>
 
-<script>
-  // Abre el diálo cargar la página y bloquea el scroll
-  window.addEventListener('DOMContentLoaded', function () {
-    document.body.classList.add('body-modal-abierto');
-    document.getElementById('musica-dialog').showModal();
-  });
+  <script>
+    // Abre el diálo cargar la página y bloquea el scroll
+    window.addEventListener('DOMContentLoaded', function () {
+      document.body.classList.add('body-modal-abierto');
+      document.getElementById('musica-dialog').showModal();
+    });
 
-  let musicaReproducida = false;
+    let musicaReproducida = false;
 
-  function forzarPlayMusica() {
-    const audio = document.getElementById('musica-fondo');
-    if (!musicaReproducida && audio) {
-      audio.play().then(() => {
-        musicaReproducida = true;
-      }).catch(() => { });
+    function forzarPlayMusica() {
+      const audio = document.getElementById('musica-fondo');
+      if (!musicaReproducida && audio) {
+        audio.play().then(() => {
+          musicaReproducida = true;
+        }).catch(() => { });
+      }
     }
-  }
 
-  document.getElementById('aceptar-musica').addEventListener('click', function () {
-    document.getElementById('musica-dialog').close();
-    document.body.classList.remove('body-modal-abierto');
-    forzarPlayMusica();
-  });
-</script>
+    document.getElementById('aceptar-musica').addEventListener('click', function () {
+      document.getElementById('musica-dialog').close();
+      document.body.classList.remove('body-modal-abierto');
+      forzarPlayMusica();
+    });
+  </script>
 </body>
 
 </html>
