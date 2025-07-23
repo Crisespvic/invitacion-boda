@@ -118,41 +118,44 @@
   </div>
 
   <script src="script.js"></script>
-<script>
-  function actualizarContadorDias() {
-    const fechaBoda = new Date('2025-09-27');
-    const hoy = new Date();
-    // Elimina la hora para comparar solo fechas
-    fechaBoda.setHours(0, 0, 0, 0);
-    hoy.setHours(0, 0, 0, 0);
-    const diffTime = fechaBoda - hoy;
-    const diffDias = Math.max(0, Math.ceil(diffTime / (1000 * 60 * 60 * 24)));
-    document.getElementById('dias').textContent = diffDias;
-  }
-  actualizarContadorDias();
-</script>
 
-<script>
-  let musicaReproducida = false;
-
-  function forzarPlayMusica() {
-    const audio = document.getElementById('musica-fondo');
-    if (!musicaReproducida) {
-      audio.play().then(() => {
-        musicaReproducida = true;
-        window.removeEventListener('click', forzarPlayMusica);
-        window.removeEventListener('scroll', forzarPlayMusica);
-        window.removeEventListener('touchmove', forzarPlayMusica);
-      }).catch(() => {
-        // Si falla, no quitamos los listeners para intentar de nuevo
-      });
+  <script>
+    function actualizarContadorDias() {
+      const fechaBoda = new Date('2025-09-27');
+      const hoy = new Date();
+      // Elimina la hora para comparar solo fechas
+      fechaBoda.setHours(0, 0, 0, 0);
+      hoy.setHours(0, 0, 0, 0);
+      const diffTime = fechaBoda - hoy;
+      const diffDias = Math.max(0, Math.ceil(diffTime / (1000 * 60 * 60 * 24)));
+      document.getElementById('dias').textContent = diffDias;
     }
-  }
+    actualizarContadorDias();
+  </script>
+  
+  <script>
+    let musicaReproducida = false;
 
-  window.addEventListener('click', forzarPlayMusica);
-  window.addEventListener('scroll', forzarPlayMusica);
-  window.addEventListener('touchmove', for      lay    sica);
-</script>
+        function forzarPlayMusica() {
+          const audio = document.getElementById('musica-fondo');
+          if (!musicaReproducida) {
+            audio.play().then(() => {
+              musicaReproducida = true;
+              window.removeEventListener('click', forzarPlayMusica);
+              window.removeEventListener('scroll', forzarPlayMusica);
+            window.removeEventListener('touchstart', forzarPlayMusica);
+            window.removeEventListener('touchmove', forzarPlayMusica);
+          }).catch(() => {
+            // Si falla, no quitamos los listeners para intentar de nuevo
+          });
+        }
+      }
+
+        window.addEventListener('click', forzarPlayMusica);
+        window.addEventListener('scroll', forzarPlayMusica);
+        window.addEventListener('touchstart', forzarPlayMusica);
+        window.addEventListener('touchmove', forzarPlayMusica);
+      </script>
 </body>
 
 </html>
