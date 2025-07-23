@@ -10,33 +10,34 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-    padding: 1em;
-    width: 100%;
-    box-sizing: border-box;
+  padding: 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .container {
+    max-width: 100%;
+    padding: 0.5em;
   }
-  
-  @media (max-width: 600px) {
-    .container {
-      max-width: 100%;
-      padding: 0.5em;
-    }
-  
-    .imagen-pareja {
-      width: 100% !important;
-      max-width: 340px;
-    }
-  
-    .imagen-cristian,
-    .imagen-sonia {
-      width: 90px;
-    }
-  
-    .venue,
-    .maps,
-    .countdown {
-      padding: 1em;
-      border-radius: 15px;
-    }
+
+  .imagen-pareja {
+    width: 100% !important;
+    max-width: 340px;
+  }
+
+  .imagen-cristian,
+  .imagen-sonia {
+    width: 90px;
+  }
+
+  .venue,
+  .maps,
+  .countdown,
+  .lunch-hour {
+    padding: 1em;
+    border-radius: 15px;
+  }
 }
 
 header h1 {
@@ -143,9 +144,9 @@ header span {
 .countdown span#minutos,
 .countdown span#segundos {
   color: #ff0000;
-    font-size: 1.4em;
-    text-shadow: 2px 2px 6px #000000bb;
-    text-transform: uppercase;
+  font-size: 1.4em;
+  text-shadow: 2px 2px 6px #000000bb;
+  text-transform: uppercase;
 }
 
 .lunch-hour .time {
@@ -215,11 +216,12 @@ header span {
   text-shadow: 2px 2px 6px #ffffff;
   text-transform: uppercase;
 }
+
 .lunch-hour {
   color: #ff0000;
-    font-size: 0.3em;
-    text-shadow: 2px 2px 6px #000000bb;
-    text-transform: uppercase;
+  font-size: 0.3em;
+  text-shadow: 2px 2px 6px #000000bb;
+  text-transform: uppercase;
 }
 
 .rye-regular {
@@ -272,6 +274,34 @@ button:hover {
 .icon-btn svg polygon,
 .icon-btn svg rect {
   fill: #000000;
+}
+
+.maps h2 {
+  font-family: "Rye", serif;
+  font-size: 1.6em;
+  font-weight: normal;
+  color: #000000;
+  letter-spacing: 2px;
+  margin: 0.5em 0 0.2em 0;
+  text-shadow: 2px 2px 6px #ffffff;
+  text-transform: uppercase;
+}
+
+.maps p {
+  font-family: 'Franklin Gothic Medium', serif;
+  font-size: 1.6em;
+  font-weight: normal;
+  color: #000000;
+  letter-spacing: 1px;
+  margin: 0.5em 0 0.2em 0;
+  text-shadow: 2px 2px 6px #ffffff;
+  text-transform: uppercase;
+}
+
+.maps iframe {
+  border: black solid 1px;
+  border-radius: 10px;
+
 }
 
 .hearts-container {
@@ -333,6 +363,7 @@ button:hover {
   background: #f4b918;
   color: #000;
 }
+
 @keyframes floatHeart {
   0% {
     transform: translateY(100vh) scale(1);
@@ -357,9 +388,9 @@ button:hover {
   animation: fadeIn 1.5s ease;
   border-radius: 40px;
   box-shadow: 0 4px 24px #e255a322;
-    background: #fff9fa2d;
-    padding: 2em;
-    margin-bottom: 2em;
+  background: #fff9fa2d;
+  padding: 2em;
+  margin-bottom: 2em;
 }
 
 @keyframes fadeIn {
@@ -373,6 +404,7 @@ button:hover {
     transform: translateY(0);
   }
 }
+
 @media (max-width: 590px) {
   .container {
     max-width: 100vw;
@@ -409,10 +441,12 @@ button:hover {
 
   .venue,
   .maps,
-  .countdown {
+  .countdown,
+  .lunch-hour {
     padding: 0.7em;
     border-radius: 10px;
   }
+
   .countdown span#horas,
   .countdown span#minutos,
   .countdown span#segundos {
@@ -471,7 +505,7 @@ button:hover {
     width: 32px;
     height: 32px;
   }
-  
+
 }
 
 @media (max-width: 390px) {
