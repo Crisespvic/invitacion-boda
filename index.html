@@ -56,20 +56,25 @@
 </script>
 
 <script>
-  // Función para reproducir el audio
+    let musicaReproducida = false;
+
   function forzarPlayMusica() {
     const audio = document.getElementById('musica-fondo');
-    if (audio.paused) {
-      audio.play().catch(() => { });
+    if (!musicaReproducida) {
+      audio.play().then(() => {
+        musicaReproducida = true;
+        window.removeEventListener('click', forzarPlayMusica);
+        window.removeEventListener('scroll', forzarPlayMusica);
+        window.removeEventListener('touchstart', forzarPlayMusica);
+      }).catch(() => {
+        // Si falla, no quitamos los listeners para intentar de nuevo
+      });
     }
-    // Elimina los listeners después del primer intento
-    window.removeEventListener('click', forzarPlayMusica);
-    window.removeEventListener('scroll', forzarPlayMusica);
   }
 
-  // Añade los listeners al cargar la página
   window.addEventListener('click', forzarPlayMusica);
   window.addEventListener('scroll', forzarPlayMusica);
+    window.addEventListener('touchstart', forzarPlayMusica);
 </script>
 
 <body>
@@ -134,7 +139,8 @@
 
     <section class="maps">
       <h2>Ubicación</h2>
-      <p>Te esperamos en el Restaurante El Pelut, donde celebraremos nuestra boda.<br> Aquí tienes la ubicación para que no te
+      <p>Te esperamos en el Restaurante El Pelut, donde celebraremos nuestra boda.<br> Aquí tienes la ubicación para que
+        no te
         pierdas:</p>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1305.1565338125001!2d-0.12728402142912698!3d38.91933736999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61e66c0231050f%3A0x2c117f8b6b89374d!2sCarrer%20de%20la%20Sagrada%20Fam%C3%ADlia%2C%209%2C%2046780%20Oliva%2C%20Val%C3%A8ncia!5e0!3m2!1sen!2ses!4v1753262869046!5m2!1sen!2ses"
