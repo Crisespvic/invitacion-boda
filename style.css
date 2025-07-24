@@ -1,5 +1,5 @@
 body {
-  background: #3b6b8b url('https://www.transparenttextures.com/patterns/dark-leather.png');
+  background: #48a6e4 url('https://www.transparenttextures.com/patterns/dark-leather.png');
   color: #000000;
   font-family: "Rye", serif;
   margin: 0;
@@ -8,15 +8,21 @@ body {
 }
 
 .buttons {
-  background-image: url('img/bg5.jpg');
-  background-size: cover;
-  background-size: 100%;
-  background-position: initial;
-  background-repeat: no-repeat;
-  padding: 4rem;
-  color: white;
   min-height: 10%;
+  width: 100vw;
+  margin: 0;
+  padding: 4rem 0;
+  background-image: url('img/bg1.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
+
 
 .container {
   max-width: 1200px;
@@ -392,6 +398,22 @@ button:hover {
   .container {
     max-width: 100%;
     padding: 0.5em;
+  }
+
+  .buttons {
+    min-height: 10%;
+    width: 100vw;
+    margin: 0;
+    padding: 4rem 0;
+    background-image: url('img/bg1.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
   }
 
   .buttons .icon-btn {
