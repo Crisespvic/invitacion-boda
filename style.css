@@ -1,10 +1,21 @@
 body {
-  background: #66c2ff url('https://www.transparenttextures.com/patterns/dark-leather.png');
+  background: #3b6b8b url('https://www.transparenttextures.com/patterns/dark-leather.png');
   color: #000000;
   font-family: "Rye", serif;
   margin: 0;
   padding: 0;
   text-align: center;
+}
+
+.buttons {
+  background-image: url('img/bg5.jpg');
+  background-size: cover;
+  background-size: 100%;
+  background-position: initial;
+  background-repeat: no-repeat;
+  padding: 4rem;
+  color: white;
+  min-height: 10%;
 }
 
 .container {
@@ -15,29 +26,27 @@ body {
   box-sizing: border-box;
 }
 
-@media (max-width: 600px) {
-  .container {
-    max-width: 100%;
-    padding: 0.5em;
-  }
+.buttons .icon-btn {
+  font-size: 1em;
+  padding: 0.5em 1em;
+}
 
-  .imagen-pareja {
-    width: 100% !important;
-    max-width: 340px;
-  }
+.imagen-pareja {
+  width: 100% !important;
+  max-width: 340px;
+}
 
-  .imagen-cristian,
-  .imagen-sonia {
-    width: 90px;
-  }
+.imagen-cristian,
+.imagen-sonia {
+  width: 90px;
+}
 
-  .venue,
-  .maps,
-  .countdown,
-  .lunch-hour {
-    padding: 1em;
-    border-radius: 15px;
-  }
+.venue,
+.maps,
+.countdown,
+.lunch-hour {
+  padding: 1em;
+  border-radius: 15px;
 }
 
 header h1 {
@@ -46,7 +55,6 @@ header h1 {
   text-shadow: 2px 2px 6px #ffffff;
   text-transform: uppercase;
 }
-
 
 header span {
   font-size: 0.5em;
@@ -74,7 +82,7 @@ header span {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 6.5rem;
+  gap: 6rem;
   /* espacio entre imágenes */
   flex-wrap: wrap;
   /* permite que bajen en pantallas pequeñas */
@@ -83,14 +91,14 @@ header span {
 
 .imagen-cristian,
 .imagen-sonia {
-  width: 202px;
+  width: 16%;
   height: auto;
-  display: block;
   border-radius: 10px;
 }
 
 .imagen-pareja {
-  width: 540px;
+  width: 95vw !important;
+  max-width: 500px;
   height: auto;
   display: block;
   border-radius: 10px;
@@ -106,14 +114,14 @@ header span {
 }
 
 .date {
-  font-size: 4em;
+  font-size: 2.8em;
   margin: 0.5em 0;
   text-shadow: 2px 2px 6px #ffffff;
   text-transform: uppercase;
 }
 
 .location {
-  font-size: 3.5em;
+  font-size: 2.8em;
   font-style: italic;
   margin-bottom: 2em;
   text-shadow: 2px 2px 6px #ffffff;
@@ -299,8 +307,11 @@ button:hover {
 }
 
 .maps iframe {
+  margin-top: 1em;
   border: black solid 1px;
   border-radius: 10px;
+  width: 100%;
+  height: auto;
 
 }
 
@@ -364,6 +375,380 @@ button:hover {
   color: #000;
 }
 
+
+.venue,
+.maps,
+.countdown,
+.lunch-hour {
+  animation: fadeIn 1.5s ease;
+  border-radius: 40px;
+  box-shadow: 0 4px 24px #e255a322;
+  background: #ffffff7d;
+  padding: 2em;
+  margin-bottom: 2em;
+}
+
+@media (max-width: 700px) {
+  .container {
+    max-width: 100%;
+    padding: 0.5em;
+  }
+
+  .buttons .icon-btn {
+    font-size: 1em;
+    padding: 0.5em 1em;
+  }
+
+  .imagen-pareja {
+    width: 100% !important;
+    max-width: 340px;
+  }
+
+  .imagen-cristian,
+  .imagen-sonia {
+    width: 90px;
+  }
+
+  .venue,
+  .maps,
+  .countdown,
+  .lunch-hour {
+    padding: 1em;
+    border-radius: 15px;
+  }
+
+  header h1 {
+    font-size: 3em;
+    font-weight: normal;
+    text-shadow: 2px 2px 6px #ffffff;
+    text-transform: uppercase;
+  }
+
+  header span {
+    font-size: 0.5em;
+    display: inline-block;
+    margin: 0 0.5em;
+    color: #000000;
+  }
+
+  .header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    /* opcional para que no se rompa en pantallas pequeñas */
+  }
+
+  .header-content {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .imagenes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    /* espacio entre imágenes */
+    flex-wrap: wrap;
+    /* permite que bajen en pantallas pequeñas */
+    margin: 1.5rem 0;
+  }
+
+  .imagen-cristian,
+  .imagen-sonia {
+    width: 16%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .imagen-pareja {
+    width: 95vw !important;
+    max-width: 288px;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+  }
+
+  .subtitle {
+    font-style: italic;
+    font-size: 4em;
+    margin-top: 0.8em;
+    color: #f4b918;
+    text-shadow: 2px 2px 6px #000000;
+    text-transform: uppercase;
+  }
+
+  .date {
+    font-size: 2.8em;
+    margin: 0.5em 0;
+    text-shadow: 2px 2px 6px #ffffff;
+    text-transform: uppercase;
+  }
+
+  .location {
+    font-size: 2.8em;
+    font-style: italic;
+    margin-bottom: 2em;
+    text-shadow: 2px 2px 6px #ffffff;
+    text-transform: uppercase;
+  }
+
+  .countdown {
+    display: flex;
+    justify-content: space-around;
+    margin: 2em 0;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 6px #ffffff;
+    text-transform: uppercase;
+  }
+
+  .countdown-info {
+    text-align: left;
+  }
+
+  .countdown span#dias {
+    color: #ff0000;
+    font-size: 2em;
+    text-shadow: 2px 2px 6px #000000bb;
+    text-transform: uppercase;
+  }
+
+  .countdown span#horas,
+  .countdown span#minutos,
+  .countdown span#segundos {
+    color: #ff0000;
+    font-size: 1.4em;
+    text-shadow: 2px 2px 6px #000000bb;
+    text-transform: uppercase;
+  }
+
+  .lunch-hour .time {
+    color: #ff0000;
+    font-size: 6em;
+    text-shadow: 2px 2px 6px #000000bb;
+    text-transform: uppercase;
+  }
+
+  .lunch-hour p {
+    color: #000000;
+    /* Un azul oscuro elegante */
+    font-size: 4em;
+    font-weight: normal;
+    margin-bottom: 0.5em;
+  }
+
+  .lunch-hour .label {
+    color: #000000;
+    font-size: 4em;
+    margin-left: 0.2em;
+  }
+
+  .venue {
+    margin: 3em 0;
+  }
+
+  .venue p {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    text-shadow: 2px 2px 6px #ffffff;
+  }
+
+  .venue img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1em;
+  }
+
+  .venue-info h2 {
+    margin: 0;
+    font-size: 2em;
+    font-family: serif;
+  }
+
+  .venue-info p {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+    text-shadow: 2px 2px 6px #ffffff;
+    text-transform: uppercase;
+  }
+
+  .venue-info a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .venue-title {
+    font-family: "Rye", serif;
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #000000;
+    letter-spacing: 2px;
+    margin: 0.5em 0 0.2em 0;
+    text-shadow: 2px 2px 6px #ffffff;
+    text-transform: uppercase;
+  }
+
+  .lunch-hour {
+    color: #ff0000;
+    font-size: 0.3em;
+    text-shadow: 2px 2px 6px #000000bb;
+    text-transform: uppercase;
+  }
+
+  .rye-regular {
+    font-family: "Rye", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  button {
+    font-size: 1.2em;
+    padding: 0.5em 1em;
+    margin: 0.5em;
+    border: none;
+    border-radius: 8px;
+    background-color: #f4b918;
+    color: #000;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #f4b918;
+  }
+
+  .icon-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    background: #000;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: transform 0.2s;
+    font-size: 1.2em;
+    color: #fff;
+  }
+
+  .icon-btn:hover {
+    background: #ff0000;
+    color: #fff;
+  }
+
+  .icon-btn:active {
+    transform: scale(0.95);
+  }
+
+  .icon-btn svg {
+    fill: #fff;
+  }
+
+  .icon-btn svg polygon,
+  .icon-btn svg rect {
+    fill: #000000;
+  }
+
+  .maps h2 {
+    font-family: "Rye", serif;
+    font-size: 1.6em;
+    font-weight: normal;
+    color: #000000;
+    letter-spacing: 2px;
+    margin: 0.5em 0 0.2em 0;
+    text-shadow: 2px 2px 6px #ffffff;
+    text-transform: uppercase;
+  }
+
+  .maps p {
+    font-family: 'Franklin Gothic Medium', serif;
+    font-size: 1.6em;
+    font-weight: normal;
+    color: #000000;
+    letter-spacing: 1px;
+    margin: 0.5em 0 0.2em 0;
+    text-shadow: 2px 2px 6px #ffffff;
+    text-transform: uppercase;
+  }
+
+  .maps iframe {
+    margin-top: 1em;
+    border: black solid 1px;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+
+  }
+
+  .hearts-container {
+    pointer-events: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    overflow: hidden;
+  }
+
+  .heart {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    opacity: 0.8;
+    animation: floatHeart 6s linear forwards;
+    filter: drop-shadow(0 2px 6px #ffffff);
+  }
+
+  .body-modal-abierto {
+    overflow: hidden !important;
+    height: 100vh;
+    position: fixed;
+    width: 100vw;
+  }
+
+  /* style.css */
+  #musica-dialog {
+    border: #000000 dotted 4px;
+    border-radius: 20px;
+    padding: 2em 1.5em;
+    background: #fff0f6;
+    text-align: center;
+    max-width: 90vw;
+    font-family: 'Rye', serif;
+  }
+
+  #musica-dialog p {
+    font-size: 1.2em;
+    color: #a91919;
+    margin-bottom: 1.5em;
+  }
+
+  #aceptar-musica {
+    background: #000000;
+    color: #fff;
+    border: #000000 solid 1px;
+    border-radius: 30px;
+    padding: 0.7em 2em;
+    font-size: 1.1em;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #e255a344;
+  }
+
+  #aceptar-musica:hover {
+    background: #f4b918;
+    color: #000;
+  }
+}
+
+
+
+
+
+
 @keyframes floatHeart {
   0% {
     transform: translateY(100vh) scale(1);
@@ -381,17 +766,7 @@ button:hover {
 }
 
 
-.venue,
-.maps,
-.countdown,
-.lunch-hour {
-  animation: fadeIn 1.5s ease;
-  border-radius: 40px;
-  box-shadow: 0 4px 24px #e255a322;
-  background: #fff9fa2d;
-  padding: 2em;
-  margin-bottom: 2em;
-}
+
 
 @keyframes fadeIn {
   from {
@@ -405,23 +780,23 @@ button:hover {
   }
 }
 
-@media (max-width: 590px) {
+@media (max-width: 600px) {
   .container {
     max-width: 100vw;
     padding: 0.2em;
   }
 
   header h1 {
-    font-size: 1em;
+    font-size: 3em;
   }
 
   .subtitle {
-    font-size: 1em;
+    font-size: 2.6em;
   }
 
   .date,
   .location {
-    font-size: 2em;
+    font-size: 1.8em;
   }
 
   .imagenes {
@@ -431,12 +806,12 @@ button:hover {
 
   .imagen-pareja {
     width: 95vw !important;
-    max-width: 200px;
+    max-width: 250px;
   }
 
   .imagen-cristian,
   .imagen-sonia {
-    width: 74px;
+    width: 94px;
   }
 
   .venue,
@@ -473,9 +848,14 @@ button:hover {
   }
 }
 
-@media (max-width: 490px) {
+@media (max-width: 500px) {
   header h1 {
     font-size: 2.2em;
+  }
+
+  .buttons .icon-btn {
+    font-size: 0.9em;
+    padding: 0.5em 1em;
   }
 
   .subtitle {
@@ -508,10 +888,69 @@ button:hover {
 
 }
 
-@media (max-width: 390px) {
+@media (max-width: 400px) {
 
   header h1 {
     font-size: 1.6em;
+  }
+
+  .buttons .icon-btn {
+    font-size: 0.8em;
+    padding: 0.5em 1em;
+  }
+
+  .subtitle {
+    font-size: 2em;
+  }
+
+  .date,
+  .location {
+    font-size: 1.5em;
+  }
+
+  .imagenes {
+    flex-direction: row;
+    gap: 0.7em;
+  }
+
+  .imagen-pareja {
+    width: 95vw !important;
+    max-width: 150px;
+  }
+
+  .imagen-cristian,
+  .imagen-sonia {
+    width: 54px;
+  }
+
+  .venue,
+  .maps,
+  .countdown {
+    padding: 0.7em;
+    border-radius: 10px;
+    font-size: 0.8em;
+  }
+
+  .venue-title {
+    font-size: 1em;
+  }
+
+  .heart {
+    width: 10px;
+    height: 10px;
+  }
+
+}
+
+@media (max-width: 380px) {
+
+  header h1 {
+    font-size: 1.6em;
+  }
+
+  .buttons .icon-btn {
+    font-size: 0.52em;
+    padding: 0.5em 1em;
   }
 
   .subtitle {

@@ -55,21 +55,25 @@
     <button id="aceptar-musica">Aceptar</button>
   </dialog>
 
-  <button class="icon-btn" onclick="document.getElementById('musica-fondo').play()" aria-label="Reproducir música">
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-      <circle cx="16" cy="16" r="16" fill="#e0c3a3" />
-      <polygon points="12,9 26,16 12,23" fill="#7c5e3c" />
-    </svg>
-    Reproducir
-  </button>
-  <button class="icon-btn" onclick="document.getElementById('musica-fondo').pause()" aria-label="Pausar música">
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-      <circle cx="16" cy="16" r="16" fill="#e0c3a3" />
-      <rect x="11" y="10" width="3" height="12" fill="#7c5e3c" />
-      <rect x="18" y="10" width="3" height="12" fill="#7c5e3c" />
-    </svg>
-    Pausar
-  </button>
+  <section class="buttons">
+    <button class="icon-btn" onclick="document.getElementById('musica-fondo').play()" aria-label="Reproducir música">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="16" fill="#e0c3a3" />
+        <polygon points="12,9 26,16 12,23" fill="#7c5e3c" />
+      </svg>
+      Reproducir
+    </button>
+    <button class="icon-btn" onclick="document.getElementById('musica-fondo').pause()" aria-label="Pausar música">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="16" fill="#e0c3a3" />
+        <rect x="11" y="10" width="3" height="12" fill="#7c5e3c" />
+        <rect x="18" y="10" width="3" height="12" fill="#7c5e3c" />
+      </svg>
+      Pausar
+    </button>
+
+  </section>
+
   <div class="hearts-container"></div>
   <div class="container">
     <header>
@@ -119,7 +123,8 @@
 
     <section class="maps">
       <h2>Ubicación</h2>
-      <p>Te esperamos en el Restaurante El Pelut, donde celebraremos nuestra boda.<br><br> Aquí tienes la ubicación para que no te pierdas:</p>
+      <p>Te esperamos en el Restaurante El Pelut, donde celebraremos nuestra boda.<br><br> Aquí tienes la ubicación para
+        que no te pierdas:</p>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1305.1565338125001!2d-0.12728402142912698!3d38.91933736999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61e66c0231050f%3A0x2c117f8b6b89374d!2sCarrer%20de%20la%20Sagrada%20Fam%C3%ADlia%2C%209%2C%2046780%20Oliva%2C%20Val%C3%A8ncia!5e0!3m2!1sen!2ses!4v1753262869046!5m2!1sen!2ses"
         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
