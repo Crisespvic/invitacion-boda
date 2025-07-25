@@ -238,6 +238,37 @@ header span {
   text-transform: uppercase;
 }
 
+
+
+.seccion-carrusel {
+  margin: 40px auto;
+}
+
+.carrusel-title {
+  font-size: 2em;
+  font-weight: normal;
+  text-shadow: 2px 2px 6px #ffffff;
+  text-transform: uppercase;
+}
+
+.swiper {
+  aspect-ratio: 16 / 9;
+  max-height: 600px;
+width: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .rye-regular {
   font-family: "Rye", serif;
   font-weight: 400;
@@ -385,6 +416,7 @@ button:hover {
 .venue,
 .maps,
 .countdown,
+.seccion-carrusel,
 .lunch-hour {
   animation: fadeIn 1.5s ease;
   border-radius: 40px;
