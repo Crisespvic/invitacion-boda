@@ -108,68 +108,37 @@
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <a href="img/fotos/img1.jpg" data-lightbox="carrusel">
-              <img src="img/fotos/img1.jpg" alt="Imagen 1" />
-            </a>
+            <img src="img/fotos/img1.jpg" alt="Imagen 1" />
           </div>
           <div class="swiper-slide">
-            <a href="img/fotos/img2.jpg" data-lightbox="carrusel">
-              <img src="img/fotos/img2.jpg" alt="Imagen 2 " />
-            </a>
+            <img src="img/fotos/img2.jpg" alt="Imagen 2 " />
           </div>
           <div class="swiper-slide">
-            <a href="img/fotos/img3.jpg" data-lightbox="carrusel">
-              <img src="img/fotos/img3.jpg" alt="Imagen 3" />
-            </a>
-
+            <img src="img/fotos/img3.jpg" alt="Imagen 3" />
           </div>
           <div class="swiper-slide">
-            <a href="img/fotos/img4.jpg" data-lightbox="carrusel">
-              <img src="img/fotos/img4.jpg" alt="Imagen 4" />
-            </a>
-
+            <img src="img/fotos/img4.jpg" alt="Imagen 4" />
           </div>
           <div class="swiper-slide">
-            <a href="img/fotos/img5.jpg" data-lightbox="carrusel">
-              <img src="img/fotos/img5.webp" alt="Imagen 5" />
-            </a>
-
+            <img src="img/fotos/img5.webp" alt="Imagen 5" />
           </div>
           <div class="swiper-slide">
-            <a href="img/fotos/img6.jpg" data-lightbox="carrusel">
-              <img src="img/fotos/img6.jpg" alt="Imagen 6" />
-            </a>
-
+            <img src="img/fotos/img6.jpg" alt="Imagen 6" />
           </div>
           <div class="swiper-slide">
-            <a href="img/fotos/img8.jpg" data-lightbox="carrusel">
-              <img src="img/fotos/img8.jpg" alt="Imagen 8" />
-            </a>
-
+            <img src="img/fotos/img8.jpg" alt="Imagen 8" />
           </div>
           <div class="swiper-slide">
-            <a href="img/fotos/img9.jpg" data-lightbox="carrusel">
-              <img src="img/fotos/img9.jpg" alt="Imagen 9" />
-            </a>
-
+            <img src="img/fotos/img9.jpg" alt="Imagen 9" />
           </div>
           <div class="swiper-slide">
-            <a href="img/fotos/img10.jpg" data-lightbox="carrusel">
-              <img src="img/fotos/img10.jpg" alt="Imagen 10" />
-            </a>
-
+            <img src="img/fotos/img10.jpg" alt="Imagen 10" />
           </div>
           <div class="swiper-slide">
-            <a href="img/fotos/img13.jpg" data-lightbox="carrusel">
-              <img src="img/fotos/img13.jpg" alt="Imagen 13" />
-            </a>
-
+            <img src="img/fotos/img13.jpg" alt="Imagen 13" />
           </div>
           <div class="swiper-slide">
-            <a href="img/fotos/NUESTRA PRIMERA FOTO.jpg" data-lightbox="carrusel">
-              <img src="img/fotos/NUESTRA PRIMERA FOTO.jpg" alt="Imagen 14" />
-            </a>
-
+            <img src="img/fotos/NUESTRA PRIMERA FOTO.jpg" alt="Imagen 14" />
           </div>
         </div>
         <!-- Botones de navegación -->
@@ -238,34 +207,10 @@
     setInterval(actualizarContador, 1000);
   </script>
 
-  <script>
-    // Abre el diálo cargar la página y bloquea el scroll
-    window.addEventListener('DOMContentLoaded', function () {
-      document.body.classList.add('body-modal-abierto');
-      document.getElementById('musica-dialog').showModal();
-    });
-
-    let musicaReproducida = false;
-
-    function forzarPlayMusica() {
-      const audio = document.getElementById('musica-fondo');
-      if (!musicaReproducida && audio) {
-        audio.play().then(() => {
-          musicaReproducida = true;
-        }).catch(() => { });
-      }
-    }
-
-    document.getElementById('aceptar-musica').addEventListener('click', function () {
-      document.getElementById('musica-dialog').close();
-      document.body.classList.remove('body-modal-abierto');
-      forzarPlayMusica();
-    });
-  </script>
-
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
+  <script src="music.js"></script>
 
 
 </body>
